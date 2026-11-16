@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>O Cofre Secreto</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="forest"></div>
+
+    <main class="game-container">
+
+        <header>
+            <p class="subtitle">✦ ARQUIVO CONFIDENCIAL ✦</p>
+            <h1>COFRE <span>SECRETO</span></h1>
+            <p class="description">
+                Um segredo está escondido nas profundezas da floresta...
+            </p>
+        </header>
+
+        <section class="vault-section">
+
+            <div class="vault" id="vault">
+
+                <div class="vault-top"></div>
+
+                <div class="vault-door">
+
+                    <div class="vault-wheel">
+                        <div class="wheel-center"></div>
+                        <div class="wheel-handle"></div>
+                    </div>
+
+                    <div class="vault-lock"></div>
+
+                    <div class="vault-light"></div>
+
+                </div>
+
+            </div>
+
+            <p class="vault-status" id="vaultStatus">
+                <span class="status-dot"></span>
+                COFRE BLOQUEADO
+            </p>
+
+        </section>
+
+        <section class="game-panel">
+
+            <h2>DESCUBRA A SENHA</h2>
+
+            <p class="instruction">
+                Digite um número entre <strong>1 e 50</strong>
+                para tentar desbloquear o cofre.
+            </p>
+
+            <div class="input-area">
+
+                <input
+                    type="number"
+                    id="guess"
+                    min="1"
+                    max="50"
+                    placeholder="00"
+                    autocomplete="off"
+                >
+
+                <button id="tryButton" onclick="checkGuess()">
+                    DESBLOQUEAR ↗
+                </button>
+
+            </div>
+
+            <p id="message" class="message">
+                A floresta guarda um segredo...
+            </p>
+
+            <div class="attempts-box">
+
+                <div>
+                    <span class="info-label">TENTATIVAS</span>
+                    <p id="attempts">0 / 7</p>
+                </div>
+
+                <div>
+                    <span class="info-label">RESTANTES</span>
+                    <p id="remaining">7</p>
+                </div>
+
+            </div>
+
+            <div class="attempt-bar">
+                <div id="progress"></div>
+            </div>
+
+            <p id="warning" class="warning"></p>
+
+            <button class="restart-button" onclick="restartGame()">
+                ↻ REINICIAR JOGO
+            </button>
+
+        </section>
+
+        <footer>
+            <p>☾ NÃO CONFIE NOS SEGREDOS DA FLORESTA ☽</p>
+            <span>PROJECT 07 • THE SECRET VAULT</span>
+        </footer>
+
+    </main>
+
+    <!-- TELA SUSPENSA DE VITÓRIA -->
+
+    <div class="overlay" id="overlay">
+
+        <div class="success-card">
+
+            <div class="success-icon">✦</div>
+
+            <p class="success-subtitle">ACESSO AUTORIZADO</p>
+
+            <h2>COFRE<br><span>DESBLOQUEADO!</span></h2>
+
+            <p class="success-text">
+                Você encontrou o segredo escondido na floresta.
+            </p>
+
+            <div class="success-attempts">
+                <span>TENTATIVAS UTILIZADAS</span>
+                <strong id="finalAttempts">0</strong>
+            </div>
+
+            <button onclick="restartGame()">
+                JOGAR NOVAMENTE ↗
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
